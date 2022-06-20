@@ -1,0 +1,108 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    /* 设置body高度为100%垂直高度 */
+    height: 100vh;
+    /* 弹性盒子布局，水平垂直居中，文字居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 规定属性中的文本的水平对齐方式 */
+    text-align: center;
+    /* 线性渐变背景颜色 */
+    background: linear-gradient(200deg,#a8edea,#fed6e3);
+}
+
+.wrapper{
+    /* 设置宽度为60%窗口高度 */
+    width: 60vw;
+    height: 60px;
+    line-height: 60px;
+    background: #fff;
+    /* 盒子阴影 */
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+    /* 圆角 */
+    border-radius: 50px;
+}
+
+.wrapper nav{
+    /* 弹性盒子布局 */
+    display: flex;
+    /* 生成相对定位的元素，相对其正常位置进行定位 */
+    position: relative;
+}
+
+.wrapper nav label{
+    flex: 1;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    /* 鼠标悬停显示手 */
+    cursor: pointer;
+}
+
+.wrapper nav label a{
+    position: relative;
+    z-index: -1;
+    color: #333;
+    font-size: 20px;
+    /* 设置文本粗细，默认为400，往上为粗，往下为细 */
+    font-weight: 500;
+    /* 没有文本装饰 */
+    text-decoration: none;
+}
+
+.wrapper nav label a i{
+    font-size: 25px;
+    /* 设置图标外边距，上下为0，左右为7px */
+    margin: 0px 7px;
+}
+
+.wrapper nav input{
+    /* 设置单选框为隐藏 */
+    display: none;
+}
+
+.wrapper nav .tab{
+    /* 绝对定位，相对于最近的已定位父元素 */
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    left: 0px;
+    bottom: 0px;
+    /* 设置从左往右的渐变 */
+    background: linear-gradient(to right,#f09819,#ff5858);
+    /* 设置圆角 */
+    border-radius: 50px;
+    /* 添加动画过渡，贝塞尔曲线 */
+    transition: 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+/* 选中所有a标签 */
+.wrapper nav #home:checked ~ label.home a ,
+.wrapper nav #comment:checked ~ label.comment a ,
+.wrapper nav #envelope:checked ~ label.envelope a ,
+.wrapper nav #heart:checked ~ label.heart a ,
+.wrapper nav #user:checked ~ label.user a{
+    color: #fff;
+    /* 字体颜色改变添加0.6s的动画效果 */
+    transition: 0.6s;
+}
+
+/* 设置选中状态的位置 */
+.wrapper nav #comment:checked ~ .tab{
+    left: 20%;
+}
+.wrapper nav #envelope:checked ~ .tab{
+    left: 40%;
+}
+.wrapper nav #heart:checked ~ .tab{
+    left: 60%;
+}
+.wrapper nav #user:checked ~ .tab{
+    left: 80%;
+}
