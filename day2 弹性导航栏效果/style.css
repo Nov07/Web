@@ -32,7 +32,7 @@ body{
 .wrapper nav{
     /* 弹性盒子布局 */
     display: flex;
-    /* 生成相对定位的元素，相对其正常位置进行定位 */
+    /* 相对定位，相对其正常位置进行定位 */
     position: relative;
 }
 
