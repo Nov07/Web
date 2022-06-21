@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* 设置字体为Poppins，无衬线字体，即笔画结尾是平滑的字体。 */
   font-family: Poppins, sans-serif;
 }
 
