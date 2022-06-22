@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /* 100%窗口高度，弹性盒子布局，居中 */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 渐变背景 */
+    background: linear-gradient(200deg,#e3c5db,#a9c1ed);
+    /* 溢出隐藏 */
+    overflow: hidden;
+}
+
+/* 矩形容器样式 */
+.container{
+    /* 相对定位 */
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    /* 圆角 */
+    border-radius: 15px;
+    /* 弹性盒子布局 */
+    display: flex;
+    /* 垂直排列 */
+    flex-direction: column;
+    /* 居中 */
+    align-items: center;
+    width: 350px;
+    height: 500px;
+    /* 阴影 */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 标题样式 */
+.container .title{
+    font-size: 26px;
+    /* 外边距 上65px 下70px 左右自动 */
+    margin: 65px auto 70px auto;
+}
+
+/* 输入框样式 */
+.container input{
+    width: 280px;
+    height: 30px;
+    /* 无边框 */
+    border: none;
+    /* 文字缩进8px */
+    text-indent: 8px;
+    /* 底部边框样式：1像素 实线 颜色#ddd */
+    border-bottom: 1px solid #ddd;
+    /* 无轮廓 */
+    outline: none;
+    /* 外边距：上下12px 左右auto */
+    margin: 12px auto;
+}
+
+/* 登陆按钮样式 */
+.container button{
+    width: 280px;
+    height: 40px;
+    /* 外边距：上35px 下40px 左右auto */
+    margin: 35px auto 40px auto;
+    /* 无边框 */
+    border: none;
+    /* 渐变背景 */
+    background: linear-gradient(-200deg,#fac0e7,#aac2ee);
+    /* 白色字体 */
+    color: #fff;
+    /* 字体加粗 */
+    font-weight: bold;
+    /* 字间距：8px */
+    letter-spacing: 8px;
+    /* 圆角 */
+    border-radius: 10px;
+    /* 鼠标悬停显示手标识 */
+    cursor: pointer;
+    /* 动画过渡 */
+    transition: 0.5s;
+}
+
+/* 鼠标悬停时样式 */
+.container button:hover{
+    /* 相较于鼠标未悬停时的渐变颜色反向 */
+    background: linear-gradient(-200deg,#aac2ee,#fac0e7);
+    /* 背景颜色沿x轴偏移-280px */
+    background-position-x: -280px;
+}
+
+/* 底部字体样式 */
+.container span{
+    font-size: 14px;
+}
+
+/* 底部“注册”超链接样式 */
+.container a{
+    color: plum;
+    text-decoration: none;
+}
+
+ul li{
+    /* 绝对定位，相对于最近的父元素定位 */
+    position: absolute;
+    /* 边框样式：1像素 实线 白色 */
+    border: 1px solid #fff;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    /* 无列表风格 */
+    list-style: none;
+    /* 透明度0 */
+    opacity: 0;
+}
+
+/* 设置square列表位置偏移 */
+.square li{
+    top: 40vh;
+    left: 60vw;
+    /* 执行动画：动画名 时长 线性的 无限播放 */
+    animation: square 10s linear infinite;
+}
+
+.square li:nth-child(2){
+    top: 80vh;
+    left: 10vw;
+    /* 动画延迟时间 */
+    animation-delay: 2s;
+}
+.square li:nth-child(3){
+    top: 80vh;
+    left: 85vw;
+    /* 动画延迟时间 */
+    animation-delay: 4s;
+}
+.square li:nth-child(4){
+    top: 10vh;
+    left: 70vw;
+    /* 动画延迟时间 */
+    animation-delay: 6s;
+}
+.square li:nth-child(5){
+    top: 10vh;
+    left: 10vw;
+    /* 动画延迟时间 */
+    animation-delay: 8s;
+}
+
+/* 设置circle列表位置偏移 */
+
+.circle li{
+    bottom: 0;
+    left: 15vw;
+    /* 执行动画：动画名 时长 线性的 无限播放 */
+    animation: circle 10s linear infinite;
+}
+
+.circle li:nth-child(2){
+    left: 35vw;
+    /* 动画延迟 */
+    animation-delay: 2s;
+}
+.circle li:nth-child(3){
+    left: 55vw;
+    /* 动画延迟 */
+    animation-delay: 4s;
+}
+.circle li:nth-child(4){
+    left: 75vw;
+    /* 动画延迟 */
+    animation-delay: 6s;
+}
+.circle li:nth-child(5){
+    left: 90vw;
+    /* 动画延迟 */
+    animation-delay: 8s;
+}
+
+/* 定义动画 */
+@keyframes square{
+    0%{
+        transform: scale(0) rotateY(0deg);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(5) rotateY(1000deg);
+        opacity: 0;
+    }
+}
+
+@keyframes circle{
+    0%{
+        transform: scale(0) rotateY(0deg);
+        opacity: 1;
+        bottom: 0;
+        border-radius: 0;
+    }
+    100%{
+        transform: scale(5) rotateY(1000deg);
+        opacity: 0;
+        bottom: 90vh;
+        border-radius: 50%;
+    }
+}
