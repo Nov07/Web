@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* 无轮廓 */
+    outline: none;
+    /* 告诉浏览器边框和内边距的值包含在总宽高内 */
+    box-sizing: border-box;
+}
+
+body{
+    /* 弹性布局 水平垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 最小高度为100%窗口高度 */
+    min-height: 100vh;
+    background: linear-gradient(200deg,#0c3483,#a2b6df);
+}
+
+.wrapper{
+    width: 450px;
+    background-color: #fff;
+    /* 内边距（上下左右） */
+    padding: 40px;
+    /* 阴影 */
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    /* 圆角 */
+    border-radius: 8px;
+}
+
+.wrapper .input-data{
+    /* 相对定位 */
+    position: relative;
+    width: 100%;
+    height: 40px;
+}
+
+.wrapper .input-data input{
+    width: 100%;
+    height: 100%;
+    /* 无边框 */
+    border: none;
+    font-size: 17px;
+    /* 底部边框样式 */
+    border-bottom: 2px solid #c0c0c0;
+}
+
+/* 输入框获得焦点时 */
+.wrapper .input-data input:focus ~ label,
+/* 输入框的值为合法时 */
+.wrapper .input-data input:valid ~ label{
+    /* label向上移动，同时改变字号、颜色 */
+    transform: translateY(-25px);
+    font-size: 15px;
+    color: #2c6fdb;
+}
+
+.wrapper .input-data label{
+    /* 绝对定位 */
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+    color: #808080;
+    /* 使点击label时输入框获得焦点 */
+    pointer-events: none;
+    /* 动画过渡 */
+    transition: all 0.3s ease;
+}
+
+.wrapper .input-data .underline{
+    /* 绝对定位 */
+    position: absolute;
+    bottom: 0px;
+    height: 2px;
+    width: 100%;
+    background-color: #2c6fdb;
+    /* 沿x轴缩小 */
+    transform: scale(0);
+    /* 动画过渡 */
+    transition: all 0.3s ease;
+}
+
+.wrapper .input-data input:focus ~ .underline,
+.wrapper .input-data input:valid ~ .underline{
+    /* 沿x轴放大 */
+    transform: scaleX(1);
+}
