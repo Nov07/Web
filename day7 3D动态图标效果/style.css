@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* 定义的内边距和边框均包含在总宽高内 */
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    /* 水平、垂直居中 */
+    justify-content: center;
+    align-items: center;
+}
+
+.video{
+    width: 100%;
+    height: 100vh;
+    /* 绝对定位 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.video video{
+    width: 100%;
+    height: 100%;
+    /* 保持其宽高比的同时填充元素的整个内容框 */
+    object-fit: cover;
+}
+
+.wrap{
+    width: 50%;
+    height: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    /* 网格布局，将 display 属性设置为 grid 或 inline-grid 后，它就变成了一个网格容器，这个元素的所有直系子元素将成为网格元素 */
+    display: grid;
+    /* 两行 */
+    grid-template-rows: 1fr 1fr;
+    /* 三列 */
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.icon{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.item{
+    width: 128px;
+    height: 128px;
+}
+
+.one{
+    /* 透明 定位左上角 不重复*/
+    background: transparent url(img/1.png) 0 0 no-repeat;
+}
+.two{
+    /* 透明 定位左上角 不重复*/
+    background: transparent url(img/2.png) 0 0 no-repeat;
+}
+.three{
+    /* 透明 定位左上角 不重复*/
+    background: transparent url(img/3.png) 0 0 no-repeat;
+}
+.four{
+    /* 透明 定位左上角 不重复*/
+    background: transparent url(img/4.png) 0 0 no-repeat;
+}
+.five{
+    /* 透明 定位左上角 不重复*/
+    background: transparent url(img/5.png) 0 0 no-repeat;
+}
+.six{
+    /* 透明 定位左上角 不重复*/
+    background: transparent url(img/6.png) 0 0 no-repeat;
+}
+
+.icon span{
+    padding-top: 20px;
+}
+
+.item:hover{
+    /* 加载动画 1.5秒 21步（图片为21张小图片组成，让每个小图片作为1帧） */
+    animation: icon 1.5s steps(21) infinite;
+}
+
+/* 定义动画 图片为2688像素，从左上到左下-2688像素位置 */
+@keyframes icon{
+    from{
+        background-position: 0 0;
+    }
+    to{
+        background-position: 0 -2688px;
+    }
+}
