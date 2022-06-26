@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #ee9984;
+}
+
+.search-box {
+    /* 绝对定位 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 平移：沿x轴平移-50，沿y轴平移-50% */
+    transform: translate(-50%, -50%);
+    background: #2f3640;
+    height: 40px;
+    /* 圆角 */
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.search-btn {
+    color: #e84118;
+    /* 右浮动 */
+    float: right;
+    width: 40px;
+    height: 40px;
+    /* 圆角 */
+    border-radius: 50%;
+    background: #2f3640;
+    /* 弹性盒子布局 */
+    display: flex;
+    /* 水平、居中对齐 */
+    justify-content: center;
+    align-items: center;
+    /* 过渡动画 */
+    transition: 0.4s;
+    /* 无文本样式 */
+    text-decoration: none;
+}
+
+.search-txt {
+    /* 无边框 */
+    border: none;
+    /* 无背景 */
+    background: none;
+    /* 无轮廓 */
+    outline: none;
+    /* 右浮动 */
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    /* 动画过渡 */
+    transition: 0.4s;
+    /* 行高 */
+    line-height: 40px;
+    width: 0;
+}
+
+.search-box:hover > .search-txt {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.search-box:hover > .search-btn {
+    background: white;
+}
