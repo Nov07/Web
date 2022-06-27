@@ -4,6 +4,7 @@ body {
     background: #ee9984;
 }
 
+/* 外层盒子样式 */
 .search-box {
     /* 绝对定位 */
     position: absolute;
@@ -18,6 +19,7 @@ body {
     padding: 10px;
 }
 
+/* 搜索按钮样式 */
 .search-btn {
     color: #e84118;
     /* 右浮动 */
@@ -38,6 +40,7 @@ body {
     text-decoration: none;
 }
 
+/* 输入框样式 */
 .search-txt {
     /* 无边框 */
     border: none;
@@ -57,11 +60,13 @@ body {
     width: 0;
 }
 
+/* 外层盒子鼠标悬停时文本框的样式 */
 .search-box:hover > .search-txt {
     width: 240px;
     padding: 0 6px;
 }
 
+/* 外层盒子鼠标悬停时搜索按钮的样式 */
 .search-box:hover > .search-btn {
     background: white;
 }
